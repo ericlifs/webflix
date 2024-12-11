@@ -1,4 +1,5 @@
 import { Bebas_Neue } from "next/font/google";
+import Head from "next/head";
 
 import PlayIcon from "@src/icons/PlayIcon";
 import PlusIcon from "@src/icons/PlusIcon";
@@ -8,6 +9,8 @@ import Dropdown from "@src/UI/Dropdown";
 import { MovieDBMovie, FilmsResponse } from "@src/types";
 import { getMovieDBImageURL } from "@src/utils/images";
 import DROPDOWN_OPTIONS from "@src/constants/dropdownOptions";
+
+const MAX_POPULAR_FILMS = 4;
 
 const bebas = Bebas_Neue({
   weight: "400",
@@ -19,6 +22,10 @@ type HomeProps = { featured: MovieDBMovie; popular: MovieDBMovie[] };
 export default function Home({ featured, popular }: HomeProps) {
   return (
     <main className={bebas.className}>
+      <Head>
+        <title>Liteflix</title>
+      </Head>
+
       <header className="relative flex items-end h-90dvh lg:min-h-dvh min-w-dvw px-8 pb-12 lg:pl-25 lg:pr-112.25 lg:pb-40.5 max-lg:bg-gradient-to-t from-black from-20% to-transparent">
         <img
           src={getMovieDBImageURL(featured.backdrop_path)}
@@ -67,7 +74,6 @@ export async function getServerSideProps() {
     "https://api.themoviedb.org/3/movie/popular?api_key=6f26fd536dd6192ec8a57e94141f8b20";
   const POPULAR_FILMS_URL =
     "https://api.themoviedb.org/3/movie/popular?api_key=6f26fd536dd6192ec8a57e94141f8b20";
-  const MAX_POPULAR_FILMS = 4;
 
   const [featuredRes, popularRes] = await Promise.all([
     fetch(FEATURED_FILMS_URL),
