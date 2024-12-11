@@ -8,7 +8,7 @@ type MovieProps = {
 
 export default function Movie({ movie }: MovieProps) {
   return (
-    <button className="focusable w-full aspect-video lg:w-55 text-white lg:h-36.5 p-4 max-lg:pb-8 flex justify-center items-end relative rounded-md overflow-hidden bg-black/30">
+    <button className="w-full aspect-video lg:w-55 text-white lg:h-36.5 p-4 max-lg:pb-8 flex justify-center items-end relative rounded-md overflow-hidden bg-black/30">
       <img
         src={getMovieDBImageURL(movie.backdrop_path)}
         className="absolute top-0 left-0 h-full w-full object-stretch -z-10 rounded-md"
