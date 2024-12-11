@@ -1,4 +1,7 @@
-export default function PlayIcon({ size }: { size: number }) {
+import { IconProps } from "@src/types";
+import { twMerge } from "tailwind-merge";
+
+export default function PlayIcon({ size, className = "" }: IconProps) {
   return (
     <svg
       width={size}
@@ -6,11 +9,11 @@ export default function PlayIcon({ size }: { size: number }) {
       viewBox="0 0 14 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="stroke-current"
+      className={twMerge("stroke-current", className)}
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M11.9423 8.2363L2.625 1.875V14.125L11.9423 8.2363Z"
       />
     </svg>

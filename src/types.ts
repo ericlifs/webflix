@@ -1,4 +1,4 @@
-export type FeaturedFilmsResponse = {
+export type FilmsResponse = {
   results: MovieDBMovie[];
 };
 
@@ -7,3 +7,7 @@ export type MovieDBMovie = {
   backdrop_path: string;
 };
 
+export type IconProps = {
+  size: number;
+  className?: string;
+};
