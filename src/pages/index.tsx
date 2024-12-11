@@ -41,12 +41,11 @@ export default function Home({ featured }: { featured: MovieDBMovie }) {
 }
 
 export async function getServerSideProps() {
-  const FEATURED_FILM =
-    "https://api.themoviedb.org/3/movie/now_playing?api_key=6f26fd536dd6192ec8a57e94141f8b20";
+  const featuredFilmRes = await fetch(
+    "https://api.themoviedb.org/3/movie/now_playing?api_key=6f26fd536dd6192ec8a57e94141f8b20"
+  );
 
-  const featuredFilmData = await fetch(FEATURED_FILM);
-
-  if (!featuredFilmData.ok) {
+  if (!featuredFilmRes.ok) {
     return {
       redirect: {
         destination: "/500",
@@ -54,8 +53,8 @@ export async function getServerSideProps() {
     };
   }
 
-  const featuredFilmRes: FeaturedFilmsResponse = await featuredFilmData.json();
-  const [featured] = featuredFilmRes.results;
+  const featuredFilmData: FeaturedFilmsResponse = await featuredFilmRes.json();
+  const [featured] = featuredFilmData.results;
 
   return {
     props: { featured },
