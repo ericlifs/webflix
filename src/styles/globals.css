@@ -5,3 +5,10 @@
 body {
   background: #242424;
 }
+
+@layer base {
+  .focusable {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-primary;
+  }
+}
+
