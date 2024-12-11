@@ -11,11 +11,14 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        "screen-height": '100dvh',
-        "screen-width": '100dvw',
+        13: '3.25rem',
         25: '6.25rem',
         26: '6.5rem',
+        36.5: '9.125rem',
         40.5: '10.125rem',
+        55: '13.75rem',
+        112.25: '28.0625rem',
+        "90dvh": '90dvh',
       },
       colors: {
         primary: '#64eebc',
@@ -27,6 +30,7 @@ module.exports = {
         '30': '7.5rem'
       },
       letterSpacing: {
+        'big': '0.15rem',
         'wide': '0.3rem',
         'wider': '0.5rem',
         'widest': '1rem'

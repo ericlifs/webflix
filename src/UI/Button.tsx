@@ -15,7 +15,7 @@ export default function Button({ variant, text, Icon }: ButtonProps) {
   return (
     <button
       className={twMerge(
-        "flex items-center justify-center tracking-wide uppercase outline-none gap-3 py-5 px-20 text-lg leading-5",
+        "flex items-center justify-center truncate tracking-wide uppercase outline-none gap-3 py-5 px-20 text-lg leading-5",
         VARIANT_STYLES[variant]
       )}
     >
