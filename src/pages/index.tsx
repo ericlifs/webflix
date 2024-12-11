@@ -6,6 +6,7 @@ import CircledPlayIcon from "@src/icons/CircledPlayIcon";
 import PlusIcon from "@src/icons/PlusIcon";
 import { MovieDBMovie, FilmsResponse } from "@src/types";
 import { getMovieDBImageURL } from "@src/utils/images";
+import Movie from "@src/UI/Movie";
 
 const bebas = Bebas_Neue({
   weight: "400",
@@ -20,9 +21,9 @@ export default function Home({ featured, popular }: HomeProps) {
       <header className="relative flex items-end h-90dvh lg:min-h-dvh min-w-dvw px-8 lg:pl-25 lg:pr-112.25 pb-40.5 max-lg:bg-gradient-to-t from-black from-20% to-transparent">
         <img
           src={getMovieDBImageURL(featured.backdrop_path)}
-          className="absolute inset-0 object-cover -z-10"
+          className="absolute left-0 top-0 h-full w-full object-cover -z-10"
         />
-        <section className="flex flex-col max-lg:w-full max-lg:items-center">
+        <section className="flex flex-col w-full max-lg:items-center">
           <h5 className="text-xl font-normal leading-5 text-white tracking-wider max-lg:text-center">
             ORIGINAL DE <span className="font-bold">LITEFLIX</span>
           </h5>
@@ -45,21 +46,8 @@ export default function Home({ featured, popular }: HomeProps) {
       </header>
       <ul className="relative z-10 space-y-5 max-lg:w-full max-lg:p-5 max-lg:pb-13 lg:absolute lg:right-26 lg:bottom-20">
         {popular.map((movie) => (
-          <li
-            key={movie.title}
-            className="w-full aspect-video lg:w-55 text-white lg:h-36.5 p-4 max-lg:pb-8 flex justify-center items-end relative rounded-md overflow-hidden bg-black/30"
-          >
-            <img
-              src={getMovieDBImageURL(movie.backdrop_path)}
-              className="absolute top-0 left-0 h-full w-full object-stretch -z-10 rounded-md"
-            />
-            <CircledPlayIcon
-              size={40}
-              className="absolute top-0 bottom-0 self-center"
-            />
-            <label className="text-white truncate text-center text-base uppercase tracking-big">
-              {movie.title}
-            </label>
+          <li key={movie.title}>
+            <Movie movie={movie} />
           </li>
         ))}
       </ul>
