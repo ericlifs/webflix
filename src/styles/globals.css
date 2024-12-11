@@ -1,27 +1,4 @@
-:root {
-  --background: #ffffff;
-  --foreground: #242424;
-  --primary: #64eebc;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #242424;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: sans-serif, Helvetica, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
