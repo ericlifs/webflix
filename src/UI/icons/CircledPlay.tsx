@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
-import PlayIcon from "./PlayIcon";
+import PlayIcon from "./Play";
 
 import { IconProps } from "@src/types";
 

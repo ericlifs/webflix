@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
-import CircledPlayIcon from "@src/icons/CircledPlayIcon";
 import { MovieDBMovie } from "@src/types";
 import { getMovieDBImageURL } from "@src/utils/images";
-import { twMerge } from "tailwind-merge";
-import StarIcon from "@src/icons/StarIcon";
+import StarIcon from "@src/UI/icons/Star";
+import CircledPlayIcon from "@src/UI/icons/CircledPlay";
 
 type MovieProps = {
   movie: MovieDBMovie;

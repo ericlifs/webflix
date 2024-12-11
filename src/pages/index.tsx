@@ -1,8 +1,8 @@
 import { Bebas_Neue } from "next/font/google";
 import Head from "next/head";
 
-import PlayIcon from "@src/icons/PlayIcon";
-import PlusIcon from "@src/icons/PlusIcon";
+import PlayIcon from "@src/UI/icons/Play";
+import PlusIcon from "@src/UI/icons/Plus";
 import Button from "@src/UI/Button";
 import Movie from "@src/UI/Movie";
 import Dropdown from "@src/UI/Dropdown";

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-import TickIcon from "@src/icons/TickIcon";
-import ChevronDownIcon from "@src/icons/ChevronDownIcon";
+import TickIcon from "@src/UI/icons/Tick";
+import ChevronDownIcon from "@src/UI/icons/ChevronDown";
 
 type DropdownOption = {
   value: string;
