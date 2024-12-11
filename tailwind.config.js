@@ -23,7 +23,8 @@ module.exports = {
         white: '#FFFFFF',
       },
       fontSize: {
-        '8.5xl': '7.5rem'
+        '19': '4.75rem',
+        '30': '7.5rem'
       },
       letterSpacing: {
         'wide': '0.3rem',
@@ -31,6 +32,7 @@ module.exports = {
         'widest': '1rem'
       },
       lineHeight: {
+        19.5: '4.875rem',
         25: '6.25rem'
       }
     },

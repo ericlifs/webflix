@@ -16,21 +16,21 @@ export default function Home({ featured }: { featured: MovieDBMovie }) {
     <main
       className={twMerge(
         bebas.className,
-        "flex items-end min-h-screen-height min-w-screen-width pl-25 pr-26 pb-40.5"
+        "flex items-end min-h-screen-height min-w-screen-width px-8 lg:pl-25 lg:pr-26 pb-40.5 max-lg:bg-gradient-to-t from-black from-20% to-transparent"
       )}
     >
       <img
         src={`https://image.tmdb.org/t/p/original${featured.backdrop_path})`}
         className="absolute top-0 left-0 h-screen-height w-screen-width object-cover -z-10"
       />
-      <section className="flex flex-col">
-        <h5 className="text-xl font-normal leading-5 text-white tracking-wider">
+      <section className="flex flex-col max-lg:w-full max-lg:items-center">
+        <h5 className="text-xl font-normal leading-5 text-white tracking-wider max-lg:text-center">
           ORIGINAL DE <span className="font-bold">LITEFLIX</span>
         </h5>
-        <h1 className="text-8.5xl leading-25 tracking-widest text-primary mt-6 mb-8">
+        <h1 className="text-19 lg:text-30 leading-19.5 lg:leading-25 tracking-wider lg:tracking-widest text-primary my-4 lg:mt-6 lg:mb-8 max-lg:text-center">
           {featured.title}
         </h1>
-        <footer className="flex gap-6">
+        <footer className="flex flex-col lg:flex-row gap-4 lg:gap-6">
           <Button
             variant="primary"
             text="Reproducir"
