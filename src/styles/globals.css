@@ -7,6 +7,10 @@ body {
 }
 
 @layer base {
+  .with-transition {
+    @apply transition-all duration-300;
+  }
+
   .focusable {
     @apply outline-none focus-visible:ring-2 focus-visible:ring-primary;
   }
