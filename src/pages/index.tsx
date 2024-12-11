@@ -1,12 +1,13 @@
 import { Bebas_Neue } from "next/font/google";
 
-import Button from "@src/UI/Button";
 import PlayIcon from "@src/icons/PlayIcon";
-import CircledPlayIcon from "@src/icons/CircledPlayIcon";
 import PlusIcon from "@src/icons/PlusIcon";
+import Button from "@src/UI/Button";
+import Movie from "@src/UI/Movie";
+import Dropdown from "@src/UI/Dropdown";
 import { MovieDBMovie, FilmsResponse } from "@src/types";
 import { getMovieDBImageURL } from "@src/utils/images";
-import Movie from "@src/UI/Movie";
+import DROPDOWN_OPTIONS from "@src/constants/dropdownOptions";
 
 const bebas = Bebas_Neue({
   weight: "400",
@@ -18,7 +19,7 @@ type HomeProps = { featured: MovieDBMovie; popular: MovieDBMovie[] };
 export default function Home({ featured, popular }: HomeProps) {
   return (
     <main className={bebas.className}>
-      <header className="relative flex items-end h-90dvh lg:min-h-dvh min-w-dvw px-8 lg:pl-25 lg:pr-112.25 pb-40.5 max-lg:bg-gradient-to-t from-black from-20% to-transparent">
+      <header className="relative flex items-end h-90dvh lg:min-h-dvh min-w-dvw px-8 pb-12 lg:pl-25 lg:pr-112.25 lg:pb-40.5 max-lg:bg-gradient-to-t from-black from-20% to-transparent">
         <img
           src={getMovieDBImageURL(featured.backdrop_path)}
           className="absolute left-0 top-0 h-full w-full object-cover -z-10"
@@ -44,9 +45,15 @@ export default function Home({ featured, popular }: HomeProps) {
           </footer>
         </section>
       </header>
-      <ul className="relative z-10 space-y-5 max-lg:w-full max-lg:p-5 max-lg:pb-13 lg:absolute lg:right-26 lg:bottom-20">
+
+      <ul className="relative flex flex-col items-center z-10 space-y-5 max-lg:w-full max-lg:p-5 max-lg:pb-13 lg:absolute lg:right-26 lg:bottom-20">
+        <Dropdown
+          label="Ver"
+          options={DROPDOWN_OPTIONS}
+          className="flex w-full justify-center"
+        />
         {popular.map((movie) => (
-          <li key={movie.title}>
+          <li className="w-full" key={movie.title}>
             <Movie movie={movie} />
           </li>
         ))}
