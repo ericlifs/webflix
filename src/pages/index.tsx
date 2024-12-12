@@ -1,4 +1,5 @@
 import { Bebas_Neue } from "next/font/google";
+import Image from "next/image";
 import Head from "next/head";
 
 import PlayIcon from "@src/UI/icons/Play";
@@ -27,9 +28,12 @@ export default function Home({ featured, popular }: HomeProps) {
       </Head>
 
       <header className="relative flex items-end h-90dvh lg:min-h-dvh min-w-dvw px-8 pb-12 lg:pl-25 lg:pr-112.25 lg:pb-40.5 max-lg:bg-gradient-to-t from-black from-20% to-transparent">
-        <img
+        <Image
           src={getMovieDBImageURL(featured.backdrop_path)}
-          className="absolute left-0 top-0 h-full w-full object-cover -z-10"
+          alt={featured.title}
+          className="object-cover -z-10"
+          priority
+          fill
         />
         <section className="flex flex-col w-full max-lg:items-center">
           <h5 className="text-xl font-normal leading-5 text-white tracking-wider max-lg:text-center">

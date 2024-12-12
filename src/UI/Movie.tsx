@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -23,9 +24,11 @@ export default function Movie({ movie }: MovieProps) {
       )}
       onClick={toggleMode}
     >
-      <img
+      <Image
         src={getMovieDBImageURL(movie.backdrop_path)}
-        className="absolute top-0 left-0 h-full w-full object-stretch -z-10 rounded-md"
+        alt={movie.title}
+        className="object-stretch -z-10 rounded-md"
+        fill
       />
 
       <div
